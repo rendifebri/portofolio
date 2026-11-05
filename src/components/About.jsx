@@ -13,6 +13,7 @@ import {
   Terminal
 } from 'lucide-react';
 import { personalData } from '../data/portfolioData';
+import { getAssetPath } from '../utils/helpers';
 
 const About = () => {
   return (
@@ -64,16 +65,13 @@ const About = () => {
                 }}
               >
                 <img
-                  src={personalData.aboutImageUrl || personalData.avatarUrl}
+                  src={getAssetPath(personalData.aboutImageUrl || personalData.avatarUrl)}
                   alt={personalData.name}
                   style={{
                     width: '100%',
                     height: '420px',
                     objectFit: 'cover',
                     display: 'block',
-                  }}
-                  onError={(e) => {
-                    e.target.src = 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80';
                   }}
                 />
                 

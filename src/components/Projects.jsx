@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { GithubIcon } from './SocialIcons';
 import { projectsData } from '../data/portfolioData';
+import { getAssetPath } from '../utils/helpers';
 
 const Projects = () => {
   const [filter, setFilter] = useState('Semua');
@@ -104,7 +105,7 @@ const Projects = () => {
                 }}
               >
                 <img
-                  src={project.image}
+                  src={getAssetPath(project.image)}
                   alt={project.title}
                   style={{
                     width: '100%',
@@ -113,9 +114,6 @@ const Projects = () => {
                     transition: 'transform 0.5s ease',
                   }}
                   className="project-img"
-                  onError={(e) => {
-                    e.target.src = 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80';
-                  }}
                 />
 
                 {/* OVERLAY PURPLE GRADIENT */}

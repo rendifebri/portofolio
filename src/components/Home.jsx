@@ -14,6 +14,7 @@ import {
   WhatsAppIcon 
 } from './SocialIcons';
 import { personalData } from '../data/portfolioData';
+import { getAssetPath } from '../utils/helpers';
 
 const Home = () => {
   // Efek pergantian role/profesi dinamis
@@ -187,7 +188,7 @@ const Home = () => {
               </a>
 
               <a
-                href={personalData.cvUrl || '#'}
+                href={getAssetPath(personalData.cvUrl) || '#'}
                 download="CV_Rendi_Febri_Yusrimel.pdf"
                 className="btn btn-secondary"
                 style={{ padding: '0.85rem 1.8rem' }}
@@ -326,7 +327,7 @@ const Home = () => {
                   }}
                 >
                   <img
-                    src={personalData.avatarUrl}
+                    src={getAssetPath(personalData.avatarUrl)}
                     alt={personalData.name}
                     style={{
                       width: '100%',
@@ -334,9 +335,6 @@ const Home = () => {
                       objectFit: 'cover',
                       display: 'block',
                       transition: 'transform 0.5s ease',
-                    }}
-                    onError={(e) => {
-                      e.target.src = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80';
                     }}
                   />
                   
